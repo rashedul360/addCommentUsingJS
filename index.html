@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add comment using JS</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div id="comment-container">
+          <p id="comment"></p>
+        </div>
+        <textarea name="" id="new-comment" cols="80" rows="5"> </textarea>
+        <br />
+        <button id="post">post</button>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+    <script>
+      //button
+      document.getElementById("post").addEventListener("click", function () {
+        //textarea
+        var commentBOx = document.getElementById("new-comment");
+        //create a new perapraph
+        const newComment = document.createElement("p");
+        newComment.innerText = commentBOx.value;
+        //add on main web page
+        const addComment = document.getElementById("comment-container");
+        addComment.appendChild(newComment);
+        commentBOx.value = "";
+      });
+    </script>
+  </body>
+</html>
